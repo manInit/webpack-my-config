@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const charactersStat = {
 	hp: 2,
-	attack: 10,
+	attack: 22,
 	defense: 10,
 	type: 'magic',
 	weapon: 'stick of truth'
@@ -10,7 +10,7 @@ const charactersStat = {
 
 const reflectEnemy = {
 	...charactersStat,
-	drop: 'rune of Ansuz'
+	drop: 'rune of Algiz'
 };
 
 const Characters = () => {
