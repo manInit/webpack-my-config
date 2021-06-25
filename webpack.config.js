@@ -8,6 +8,8 @@ if (process.env.NODE_ENV === 'production') {
 	target = 'browserslist';
 }
 
+let isDev = mode === 'development';
+
 module.exports = {
 	mode: mode,
 	target: target,
@@ -23,7 +25,7 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader'
@@ -34,9 +36,13 @@ module.exports = {
 	plugins: [
 		new MiniCssExtractPlugin()
 	],
-	devtool: 'source-map',
+	resolve: {
+		extensions: ['.js', '.jsx']
+	},
+	devtool: isDev ? 'source-map' : false,
 	devServer: {
 		contentBase: './dist',
+		open: true,
 		hot: true
 	}
 }

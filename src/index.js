@@ -1,18 +1,5 @@
-import './styles/index.scss';
-
-const charactersStat = {
-	hp: 2,
-	attack: 10,
-	defense: 10,
-	type: 'magic',
-	weapon: 'stick of truth'
-};
-
-const reflectEnemy = {
-	...charactersStat,
-	drop: 'rune of Ansuz'
-};
+import { render } from 'react-dom';
+import App from './components/App';
 
 
-console.log(reflectEnemy);
-console.log(charactersStat);
+render(<App />, document.getElementById('root'));
