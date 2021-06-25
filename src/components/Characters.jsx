@@ -28,7 +28,7 @@ const Characters = () => {
         }
       </ul>
     </div>
-  )
-} 
+  );
+};
 
 export default Characters;

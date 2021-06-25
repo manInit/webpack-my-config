@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 let target = 'web';
 let mode = 'development';
@@ -16,7 +17,11 @@ let plugins = [
 if (process.env.NODE_ENV === 'production') {
 	mode = 'production';
 	target = 'browserslist';
-} 
+} else {
+	plugins.push(new ESLintPlugin({
+		extensions: ['js', 'jsx']
+	}));
+}
 
 if (process.env.SERVE) {
 	plugins.push(new ReactRefreshWebpackPlugin());
@@ -82,4 +87,4 @@ module.exports = {
 		open: true,
 		hot: true
 	}
-}
+};

@@ -14,7 +14,7 @@ const App = () => {
         <Character />
       </main>
     </>
-  )
-}
+  );
+};
 
 export default App; 
