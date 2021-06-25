@@ -8,7 +8,7 @@ const App = () => {
       <section className="character"></section>
       <main>
         <section>
-          <h1>Hai react bye</h1>
+          <h1 className="title">Hai react bye</h1>
         </section>
         <img src={anime3} alt="anime3" width="200"/>
         <Character />

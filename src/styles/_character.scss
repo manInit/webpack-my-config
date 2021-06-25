@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Aesthetic Violet';
+  src: url('../fonts/Aesthetic\ Violet.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title {
+  font-family: 'Aesthetic Violet';
+}
+
 .character {
   background: url('../images/anime1.jpg');
   background-size: cover;

@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'production') {
 	mode = 'production';
 	target = 'browserslist';
 } 
-console.log('ENV: ' + process.env.SERVE)
+
 if (process.env.SERVE) {
 	plugins.push(new ReactRefreshWebpackPlugin());
 }
@@ -66,6 +66,10 @@ module.exports = {
 				// 		maxSize: 30 * 1024 //30Kb
 				// 	}
 				// }
+			},
+			{
+				test: /\.(ttf|woff2?|eon|otf)$/,
+				type: 'asset/resource'
 			}
 		]
 	},
