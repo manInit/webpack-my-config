@@ -13,12 +13,20 @@ let isDev = mode === 'development';
 module.exports = {
 	mode: mode,
 	target: target,
+	output: {
+		assetModuleFilename: 'images/[hash][ext][query]'
+	},
 	module: {
 		rules: [
 			{
 				test: /\.(s[ac]|c)ss$/,
 				use: [
-					MiniCssExtractPlugin.loader, 
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: ''
+						} 
+					}, 
 					'css-loader', 
 					'postcss-loader',
 					'sass-loader'
@@ -30,6 +38,16 @@ module.exports = {
 				use: {
 					loader: 'babel-loader'
 				}
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg)$/i,
+				type: 'asset/resource'
+				// type: 'asset', // little image in base64
+				// parser: {
+				// 	dataUrlCondition: {
+				// 		maxSize: 30 * 1024 //30Kb
+				// 	}
+				// }
 			}
 		]
 	},
